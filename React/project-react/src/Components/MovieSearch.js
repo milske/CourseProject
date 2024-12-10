@@ -9,7 +9,7 @@ const MovieSearch = () => {
 
   // Get all movies
   const GetMovieData = () => {
-    fetch("http://localhost:8080/api/getall")
+    fetch("https://courseproject-xzff.onrender.com/api/getall")
       .then((res) => res.json())
       .then((data) => {
         console.log("All movies:", data);
@@ -25,7 +25,7 @@ const MovieSearch = () => {
       alert("Please provide a valid ID.");
       return;
     }
-    fetch(`http://localhost:8080/api/${query}`)
+    fetch(`https://courseproject-xzff.onrender.com/api/${query}`)
       .then((res) => res.json())
       .then((data) => {
         setResults([data]);
@@ -56,7 +56,9 @@ const MovieSearch = () => {
       return;
     }
     console.log("Modifying movie with ID:", query);
-    fetch(`http://localhost:8080/api/update/${query}`, { method: "PUT" })
+    fetch(`https://courseproject-xzff.onrender.com/api/update/${query}`, {
+      method: "PUT",
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log("Modified movie:", data);
@@ -70,7 +72,9 @@ const MovieSearch = () => {
       alert("Please provide a valid ID.");
       return;
     }
-    fetch(`http://localhost:8080/api/delete/${query}`, { method: "DELETE" })
+    fetch(`https://courseproject-xzff.onrender.com/api/delete/${query}`, {
+      method: "DELETE",
+    })
       .then((response) => response.json())
       .then((data) => {
         if (data.error) {

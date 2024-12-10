@@ -33,7 +33,7 @@ const AddMovie = ({ setResults }) => {
       imdb: { rating: newMovie.imdb.rating },
       poster: newMovie.poster,
     };
-    fetch("http://localhost:8080/api/add", {
+    fetch("https://courseproject-xzff.onrender.com//api/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(movieData),
